@@ -24,6 +24,7 @@
 \vfil
 \Large
 \underline{\MakeUppercase{\Title}}
+\newline
 \SubTitle
 \vfil
 \large
@@ -42,9 +43,9 @@
 
 \begin{tabular}{p{0.45\textwidth}p{0.25\textwidth}P{0.25\textwidth}} 
 \large
-Студент	&	\textunderset{\scriptsize{подпись, дата}}{\signhrule} & \textunderset{\scriptsize{Фамилия, И.О.}}{\underline{\Author}} \\ 
+Студент	&	\textunderset{\scriptsize{подпись, дата}}{\signhrule} & \textunderset{\scriptsize{Фамилия, И.О.}}{\ifdefempty{\Author}{\signhrule}{\underline{\Author}}} \\ 
 & & \\
-Преподаватель	&	\textunderset{\scriptsize{подпись, дата}}{\signhrule} & \textunderset{\scriptsize{Фамилия, И.О.}}{\signhrule} \\ 
+Преподаватель	&	\textunderset{\scriptsize{подпись, дата}}{\signhrule} & \textunderset{\scriptsize{Фамилия, И.О.}}{\ifdefempty{\Teacher}{\signhrule}{\underline{\Teacher}}} \\ 
 \end{tabular}
 }
 

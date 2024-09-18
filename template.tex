@@ -8,6 +8,21 @@
 \tableofcontents
 \newpage
 % Основная часть --------------------------------------------------------------------------------------------
-\section{Первый раздел}
-Текст
+\section*{Задание}
+\addcontentsline{toc}{section}{Задание}
+Сюда задание
+\newpage
+% -------------------------------------------------------
+\section{Заголовок}
+\subsection{Подзаголовок}
+\begin{center}
+    \centering
+    \includegraphics[width=.7\linewidth]{includes/output.png}
+    \captionof{figure}{Картинка}
+    \label{fig:prplot}
+\end{center}
+\begin{lstlisting}[language=Python, caption=листинг]
+    print("Hello world!")
+\end{lstlisting}
+
 \end{document}
