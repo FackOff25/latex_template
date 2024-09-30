@@ -23,6 +23,7 @@
     linkcolor=black,  %choose some color if you want links to stand out
 }
 
+\usepackage{verbatim}
 
 \usepackage{listings}
 \usepackage{xcolor}
@@ -51,4 +52,14 @@
 		texcl=true,
 }
 
-\lstloadlanguages{Python, C++}
+\lstdefinestyle{text}{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true,
+breakatwhitespace=true,
+literate={\-}{{-\allowbreak}}1,
+numbers=none,
+postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\lstloadlanguages{SQL}
