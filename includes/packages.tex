@@ -16,12 +16,8 @@
 \dottedcontents{section}[2.5em]{\bfseries}{2em}{0.5pc}
 \dottedcontents{subsection}[3em]{}{2em}{0.5pc}
 
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true, %set true if you want colored links
-    linktoc=all,     %set to all if you want both sections and subsections linked
-    linkcolor=black,  %choose some color if you want links to stand out
-}
+\usepackage[colorlinks,allcolors=black]{hyperref}
+\urlstyle{same}
 
 \usepackage{verbatim}
 
@@ -63,3 +59,16 @@ postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
 }
 
 \lstloadlanguages{SQL}
+
+\usepackage[numbers]{natbib}
+\usepackage{bibentry}
+%***natbib, bibentry***%
+% Следующий код необходим для того, чтобы исправить конфликт между пакетами natbib+bibentry и стилем оформления ссылок согласно российскому ГОСТу cp1251gost705u
+\ifx\undefined\selectlanguageifdefined
+\def\selectlanguageifdefined#1{}\else\fi
+\ifx\undefined\BibEmph
+\def\BibEmph#1{\emph{#1}}\else\fi
+\ifx\undefined\BibUrl
+\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote
+\def\BibAnnote#1{(#1)}\else\fi
