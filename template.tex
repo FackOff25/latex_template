@@ -19,7 +19,7 @@
 Пример цитаты.\cite{ALT}
 \begin{center}
     \centering
-    \includegraphics[width=.7\linewidth]{includes/output.png}
+    \includegraphics[width=.7\linewidth]{extras/output.png}
     \captionof{figure}{Картинка}
     \label{fig:prplot}
 \end{center}
@@ -27,7 +27,13 @@
     print("Hello world!")
 \end{lstlisting}
 
-\lstinputlisting[style=text, caption=вставка текста файла]{template.tex}
+\lstinputlisting[style=text, caption=вставка текста файла]{extras/table.csv}
+
+\begin{table}
+    \centering
+    \csvautotabular{extras/table.csv}
+\caption{Вставка таблицы из файла}
+\end{table}
 %---------------------------------------------
 \newpage
 \input{citations.tex}
