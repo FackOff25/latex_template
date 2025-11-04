@@ -7,69 +7,11 @@
 \usepackage{etoolbox}
 \usepackage{subfig}
 \usepackage{csvsimple}
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-\def\textunderset#1#2{\leavevmode
-  \vtop{\offinterlineskip\halign{%
-    \hfil##\hfil\cr\strut#2\cr\noalign{\kern-.3ex}
-    \hidewidth\strut#1\hidewidth\cr}}}
-\def\signhrule{\raggedright\baselineskip30.0ex \vrule height 0.5pt width30mm depth0pt}
-
-\dottedcontents{section}[2.5em]{\bfseries}{2em}{0.5pc}
-\dottedcontents{subsection}[3em]{}{2em}{0.5pc}
-
+\usepackage{float}
+\usepackage{subcaption}
 \usepackage[colorlinks,allcolors=black]{hyperref}
-\urlstyle{same}
-
 \usepackage{verbatim}
-
 \usepackage{listings}
 \usepackage{xcolor}
-
-\lstset
-{%
-		extendedchars=\true,
-		frame=tb,
-		escapechar=|,
-		xleftmargin=0.5cm,
-		xrightmargin=0.5cm,
-		columns=fullflexible,
-		numbers=left,
-		numbersep=4pt,
-		showspaces=false,
-		showstringspaces=false,
-		breakatwhitespace=true,
-		breaklines=true,
-		basicstyle=\color{black}\small\sffamily,
-		commentstyle=\color{gray}\itshape,
-		stringstyle=\color{orange},
-		numberstyle=\footnotesize\color{gray},
-		keywordstyle=\color{blue}\bfseries,
-		emphstyle={\color{blue}\bfseries},
-		tabsize=2,
-		texcl=true,
-}
-
-\lstdefinestyle{text}{
-basicstyle=\small\ttfamily,
-columns=flexible,
-breaklines=true,
-breakatwhitespace=true,
-literate={\-}{{-\allowbreak}}1,
-numbers=none,
-postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-}
-
-\lstloadlanguages{SQL}
-
 \usepackage[numbers]{natbib}
 \usepackage{bibentry}
-%***natbib, bibentry***%
-% Следующий код необходим для того, чтобы исправить конфликт между пакетами natbib+bibentry и стилем оформления ссылок согласно российскому ГОСТу cp1251gost705u
-\ifx\undefined\selectlanguageifdefined
-\def\selectlanguageifdefined#1{}\else\fi
-\ifx\undefined\BibEmph
-\def\BibEmph#1{\emph{#1}}\else\fi
-\ifx\undefined\BibUrl
-\def\BibUrl#1{\url{#1}}\else\fi
-\ifx\undefined\BibAnnote
-\def\BibAnnote#1{(#1)}\else\fi

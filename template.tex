@@ -1,35 +1,61 @@
 \documentclass[a4paper, 12pt]{article}
 \include{includes/packages}
+\include{includes/colors}
 \include{includes/consts}
 \include{includes/styles}
+\include{includes/listings}
+\include{includes/defines}
 \begin{document}
 \input{includes/titlepage}
 \pagebreak
 \tableofcontents
 \newpage
 % Основная часть --------------------------------------------------------------------------------------------
-\section*{Задание}
-\addcontentsline{toc}{section}{Задание}
+\nonumsection{Задание}
+
 Сюда задание.
 
 \newpage
 % -------------------------------------------------------
 \section{Заголовок}
 \subsection{Подзаголовок}
-Пример цитаты.\cite{ALT}
+
+Пример цитаты.\cite{Fennel} и ещё одной \cite{KafkaDocumentation}
+
 \begin{center}
     \centering
-    \includegraphics[width=.7\linewidth]{extras/output.png}
+    \includegraphics[width=.4\linewidth]{extras/output.png}
     \captionof{figure}{Картинка}
     \label{fig:prplot}
 \end{center}
-\begin{lstlisting}[language=Python, caption=листинг]
+
+Ссылка на рисунок \ref{fig:prplot}
+
+Ссылка на листинг \ref{lst:hello} и на \ref{lst:file}. Если ссылка перед объявлением не срабатывает с первой компиляции, сделайте повторную.
+\begin{lstlisting}[language=Python, caption=листинг, label=lst:hello]
     print("Hello world!")
 \end{lstlisting}
 
-\lstinputlisting[style=text, caption=вставка текста файла]{extras/table.csv}
+\lstinputlisting[style=text, caption=вставка текста файла, label=lst:file]{extras/table.csv}
 
-\begin{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Вау & Обычная & Таблица \\
+    \hline
+    1 & 2 & 3 \\ 
+    \hline
+    4 & 5 & 6 \\ 
+    \hline
+    \end{tabular}
+    \caption{Обычная таблица}
+    \label{table:1}
+\end{table}
+
+Тут мы ссылаемся на таблицу \ref{table:1}
+
+\begin{table}[H]
     \centering
     \csvautotabular{extras/table.csv}
 \caption{Вставка таблицы из файла}
